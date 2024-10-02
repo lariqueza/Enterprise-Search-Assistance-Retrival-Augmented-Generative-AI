@@ -1,0 +1,19 @@
+#initiate templating
+#templates = Jinja2Templates(directory="frontend")
+
+#serve static files
+#app.mount("/frontend/static", StaticFiles(directory="frontend/static"), name="frontend")
+
+#serve the HTML file
+#@app.get("/")
+def index()
+ #   return {"message": "hello world"}
+
+
+#if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("query:app", host="localhost", port=8000, reload=True)
+
+#define a model to accept incoming data(user query) from frontend
+class Item(BaseModel):
+    question: str
